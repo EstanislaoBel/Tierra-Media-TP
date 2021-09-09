@@ -7,4 +7,14 @@ public class Atraccion {
 		return null;
 	}
 
+	public double getCosto() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public double getTiempo() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

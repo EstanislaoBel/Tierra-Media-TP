@@ -10,7 +10,7 @@ public class AxB extends Promocion {
 
 		this.destinoExtra = destinoExtra;
 	}
-	
+
 	protected Atraccion getDestinoExtra() {
 		return destinoExtra;
 	}
