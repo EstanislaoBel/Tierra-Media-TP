@@ -1,37 +1,38 @@
 package tierramedia;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Promocion {
 	protected String nombre;
-	protected ArrayList<Atraccion> atracciones;
+	protected List<Atraccion> atracciones;
 
-	public Promocion(String nombreDePromocion, ArrayList<Atraccion> atracciones) {
+	public Promocion(String nombrePromocion, List<Atraccion> atraccionesIncluidas) {
 		super();
-		this.nombre = nombreDePromocion;
-		this.atracciones = atracciones;
+		this.nombre = nombrePromocion;
+		this.atracciones = atraccionesIncluidas;
 	}
 
-	protected String getNombre() {
+	public String getNombre() {
 		return nombre;
 	}
 
-	// metodo para acceder a distintos tipos de bonus de las promos...
-	public abstract void getBonus();
-
-	public abstract Object getBonus1();
-
-	protected ArrayList<Atraccion> getAtracciones() {
+	public List<Atraccion> getAtracciones() {
 		return atracciones;
 	}
 
-	public abstract double[] costoPromocion();
+	public abstract String ImprimirBonus();
 
 	public abstract double tiempoPromocion();
 
-	public double valorPromocion() {
-		// TODO Auto-generated method stub
-		return 0;
+	public abstract int tipoPromocion();
+
+	public abstract double costoPromocion();
+
+	public void getBonus() {
+	}
+
+	public Object getBonus1() {
+		return null;
 	}
 
 }

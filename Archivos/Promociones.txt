@@ -1,0 +1,9 @@
+Pack aventura, Bosque Negro, Mordor, 0.2  
+Pack degustacion, Lothlorien, La Comarca, 36
+Pack paisajes, Minas Tirith, Abismo de Helm, Erebor
+Pack comidagratis, Minas Tirith, Abismo de Helm, Numenor
+Pack paisajegratis, Abismo de Helm, Erebor,Rivendel
+Pack aventuragratis, Mordor, Moria, Bosque Negro
+Pack mezcladoAventura_Degustacion, Mordor, Lothlorien, 28
+Pack mescladoAventura_Paisaje, Mordor, Erebor, 30
+Pack mezcladoDegustacion_Paisaje,La Comarca,Rivendel, 0.4

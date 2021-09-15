@@ -1,53 +1,51 @@
 package tierramedia;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Porcentual extends Promocion {
 	private double descuento;
 
-	public Porcentual(String nombrePromocion, ArrayList<Atraccion> atraccionesIncluidas, double descuento) {
+	public Porcentual(String nombrePromocion, List<Atraccion> atraccionesIncluidas, double descuento) {
 		super(nombrePromocion, atraccionesIncluidas);
 		this.descuento = descuento;
 	}
 
-	protected double getDescuento() {
+	public double getDescuento() {
 		return descuento;
 	}
 
 	@Override
-	public void getBonus() {
-		System.out.println(descuento);
-
-	}
-
-	@Override
-	public Object getBonus1() {
-		return (double) descuento;
-	}
-
-	@Override
-	public double[] costoPromocion() {
-		double costos[] = new double[2];
+	public double costoPromocion() {
+		double costo = 0;
 
 		for (Atraccion atraccion : this.atracciones) {
-			costos[0] += atraccion.getCosto();
+			costo += atraccion.getCosto();
 		}
-		costos[1] = costos[0] * this.getDescuento();
-		return costos;
+		costo = costo - (costo * this.getDescuento());
+		return costo;
+	}
+
+	@Override
+	public String ImprimirBonus() {
+		Double descuento = this.getDescuento() * 100;
+		String descuentos = descuento.toString();
+		descuentos = "obtiene un descuento del " + descuentos + " %";
+		return descuentos;
 	}
 
 	@Override
 	public double tiempoPromocion() {
 		double horas = 0;
+
 		for (Atraccion atraccion : this.atracciones) {
-			horas = atraccion.getTiempo();
+			horas += atraccion.getTiempo();
 		}
 		return horas;
 	}
 
 	@Override
-	public double valorPromocion() {
-		return 0;
+	public int tipoPromocion() {
+		return 2;
 	}
 
 }

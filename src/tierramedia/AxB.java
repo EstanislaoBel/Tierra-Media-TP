@@ -1,41 +1,49 @@
 package tierramedia;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class AxB extends Promocion {
 	private Atraccion destinoExtra;
 
-	public AxB(String nombrePromocion, ArrayList<Atraccion> atraccionesIncluidas, Atraccion destinoExtra) {
+	public AxB(String nombrePromocion, List<Atraccion> atraccionesIncluidas, Atraccion extra) {
 		super(nombrePromocion, atraccionesIncluidas);
-
-		this.destinoExtra = destinoExtra;
+		this.destinoExtra = extra;
 	}
 
-	protected Atraccion getDestinoExtra() {
+	public Atraccion getDestinoExtra() {
 		return destinoExtra;
 	}
 
 	@Override
-	public void getBonus() {
-		System.out.println(destinoExtra.getNombre());
+	public double costoPromocion() {
+		double costo = 0;
 
-	}
+		for (Atraccion atraccion : this.atracciones) {
+			costo += atraccion.getCosto();
+		}
 
-	@Override
-	public Object getBonus1() {
-		return destinoExtra;
-	}
-
-	@Override
-	public double[] costoPromocion() {
-		// TODO Auto-generated method stub
-		return null;
+		return costo;
 	}
 
 	@Override
 	public double tiempoPromocion() {
-		// TODO Auto-generated method stub
-		return 0;
+		double horas = 0;
+
+		for (Atraccion atraccion : this.atracciones) {
+			horas += atraccion.getTiempo();
+		}
+		return horas;
+	}
+
+	@Override
+	public String ImprimirBonus() {
+		String destinoGratis = destinoExtra.getNombre();
+		return destinoGratis;
+	}
+
+	@Override
+	public int tipoPromocion() {
+		return 3;
 	}
 
 }

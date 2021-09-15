@@ -1,12 +1,11 @@
 package tierramedia;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Absoluta extends Promocion {
-	private int descuentoTotal;
 	private int costoFinal;
 
-	public Absoluta(String nombrePromocion, ArrayList<Atraccion> atraccionesIncluidas, int costoFinal) {
+	public Absoluta(String nombrePromocion, List<Atraccion> atraccionesIncluidas, int costoFinal) {
 		super(nombrePromocion, atraccionesIncluidas);
 		this.costoFinal = costoFinal;
 	}
@@ -15,40 +14,56 @@ public class Absoluta extends Promocion {
 		return costoFinal;
 	}
 
-	private Atraccion[] atracciones;
+	@Override
+	public double costoPromocion() {
+		double costo = this.getCostoFinal();
+		return costo;
+	}
 
+	@Override
+	public int tipoPromocion() {
+		return 1;
+	}
+
+	@Override
+	public void getBonus() {
+	}
+
+	@Override
+	public Object getBonus1() {
+		return null;
+	}
+
+	public double descuentoMonedas() {
+
+		double costoSinDescuento = 0;
+		double descuentoMonedas = 0;
+
+		for (Atraccion atraccion : this.atracciones) {
+			costoSinDescuento += atraccion.getCosto();
+		}
+
+		descuentoMonedas = costoSinDescuento - this.costoPromocion();
+		return descuentoMonedas;
+
+	}
+
+	@Override
 	public double tiempoPromocion() {
 		double horas = 0;
+
 		for (Atraccion atraccion : this.atracciones) {
-			horas = atraccion.getTiempo();
+			horas += atraccion.getTiempo();
 		}
 		return horas;
 	}
 
 	@Override
-	public void getBonus() {
-		System.out.println(costoFinal);
-	}
-
-	@Override
-	public Object getBonus1() {
-		return costoFinal;
-	}
-
-	@Override
-	public double[] costoPromocion() {
-		double costos[] = new double[2];
-
-		for (Atraccion atraccion : this.atracciones) {
-			costos[0] += atraccion.getCosto();
-		}
-		costos[1] = this.getCostoFinal();
-		return costos;
-	}
-
-	@Override
-	public double valorPromocion() {
-		return costoFinal - descuentoTotal;
+	public String ImprimirBonus() {
+		Double descuento = this.descuentoMonedas();
+		String descuentos = descuento.toString();
+		descuentos = "¡se ahorra " + descuentos + " monedas!";
+		return descuentos;
 	}
 
 }

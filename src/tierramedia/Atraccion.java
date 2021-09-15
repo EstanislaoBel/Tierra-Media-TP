@@ -2,19 +2,43 @@ package tierramedia;
 
 public class Atraccion {
 
-	public char[] getNombre() {
-		// TODO Auto-generated method stub
-		return null;
+	private String nombre;
+	private int costo;
+	private double tiempo;
+	private int cupo;
+	private String tipoDeAtraccion;
+
+	public Atraccion(String nombre, int costo, double tiempo, int cupo, String tipoDeAtraccion) {
+		super();
+		this.nombre = nombre;
+		this.costo = costo;
+		this.tiempo = tiempo;
+		this.cupo = cupo;
+		this.tipoDeAtraccion = tipoDeAtraccion;
 	}
 
-	public double getCosto() {
-		// TODO Auto-generated method stub
-		return 0;
+	public String getNombre() {
+		return nombre;
 	}
 
 	public double getTiempo() {
-		// TODO Auto-generated method stub
-		return 0;
+		return tiempo;
+	}
+
+	public int getCosto() {
+		return costo;
+	}
+
+	public String getTipoDeAtraccion() {
+		return tipoDeAtraccion;
+	}
+
+	public int getCupo() {
+		return cupo;
+	}
+
+	public void setCupo(int cupo) {
+		this.cupo = cupo;
 	}
 
 }

@@ -1,0 +1,15 @@
+Eowyn, Aventura, 10, 8
+Gandalf, Paisaje, 100, 5
+Sam, Degustacion, 36, 8
+Galadriel, Paisaje, 120, 6
+Legolas, Aventura, 150, 10
+Arwen, Paisaje, 87, 6
+Gimli, Degustacion, 30, 3
+Aragorn, Aventura, 42, 6.5
+Gollum, Paisaje, 1, 20
+Bilbo, Degustacion, 1000, 1000
+Cecilia, Degustacion, 1000, 1000
+Sergio, Aventura, 1000, 1000
+Lea, Paisaje,1000, 1000
+Dario, Paisaje, 1000, 1000
+Agustin, Aventura, 1000, 1000
