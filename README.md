@@ -1,6 +1,6 @@
 ## Bienvenidos al repositorio del equipo EGAXJPC!!
 
-**Equipo: EGAXJPC - Trabajo Práctico, Capitulo 1: Turismo en la Tierra Media**
+**Trabajo Práctico, Capitulo 1: Turismo en la Tierra Media**
 
 Integrantes: 
 -Bel Estanislao
